@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name= "viewport" content= "width=device-width, initial-scale=1">
+    <title>HackerRank</title>
+    <link rel= "stylesheet" type= "text/css" href= "reset.css">
+    <link rel= "stylesheet" type= "text/css" href= "Hacker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body>
+
+
+  <div id= "sidebar">
+    <%= image_tag "HackerRankLogo", id: "logo" %>
+    <div class=icons>
+    <i class="fa fa-list-alt" style="font-size:20px;color:white; margin-bottom: 25px"></i>
+    <i class="fa fa-clock-o" style="font-size:20px;color:white;margin-bottom: 25px"></i>
+    <i class="fa fa-trophy" style="font-size:20px;color:white;margin-bottom: 25px"></i>
+    <i class="fa fa-th-list" style="font-size:20px;color:white;margin-bottom: 25px"></i>
+    <i class="fa fa-comments" style="font-size:20px;color:white;margin-bottom: 25px"></i>
+  </div>
+
+  </div>
+
+<div class= "container">
+
+  <div class= "header">
+    <input type="text" name="search" placeholder= "search">
+    <%= image_tag "HackerRankTopCorner", id: "topcorner" %>
+  </div>
+
+
+  <div class= "topbar">
+
+    <div class="top-container">
+      <div class="top-left-container">
+      <h1 id= "Algorithms"> Algorithms </h1>
+      <p> 11 categories</p>
+      <p> 274 challenges</p>
+      </div>
+
+      <div class="top-right-container">
+      <p> Rating <br id= "rating"> O(logN) </p>
+      <p > Rank <br> 153 </p>
+      <p> Score <br> 2733.34 </p>
+      </div>
+    </div>
+
+    <div class="bottom-container">
+      <div class="bottom-left-container">
+      <p>All Challenges</p>
+      <p>Tutorials</p>
+      <p>Leaderboard</p>
+      <p>Contests</p>
+      <p>Network</p>
+      </div>
+      <div class= "bottom-right-container">
+      <p > Change Track </p>
+      </div>
+    </div>
+
+    </div>
+
+<div class= "subcontainer">
+  <div class=subcontainer-leftside>
+    <div class= "section"> <h1> <%= Challenge.find_by(id:5).challenge %></h1>
+      <i class="fa fa-comment" style="font-size:10px;color:grey"></i>
+      <i class="fa fa-trophy" style="font-size:10px;color:grey"></i>
+      <i class="fa fa-th-list" style="font-size:10px;color:grey"></i>
+      <p> <%= Challenge.find_by(id:5).body %> </p>
+      <p class= "textbox"> Submissions:123 </p>
+      <p class= "textbox"> Max Score: 20 </p>
+      <p class= "textbox"> Difficulty: Easy </p>
+      <button class="button"> <%= link_to "View Challenge", challenge_path(5)%> </button>
+      <%= link_to "Like", like_path(id: 5), class: 'like', :style=> "color: #{Challenge.find_by(id:5).solved ? 'tomato' : 'initial'}" %>
+    </div>
+
+    <div class= "section2"> <h1> <%= Challenge.find_by(id:6).challenge %> </h1><h1 class= "solved"><i class="fa fa-check-circle" style="color:#7EE5A2"></i>
+      Solved!</h1>
+      <p> <%= Challenge.find_by(id:6).body %> </p>
+      <p class= "textbox"> Submissions:123 </p>
+      <p class= "textbox"> Max Score: 20 </p>
+      <p class= "textbox"> Difficulty: Easy </p>
+      <button class="button"> <%= link_to "View Challenge", challenge_path(6)%> </button>
+      <%= link_to "Like", like_path(id: 6), class: 'like',  :style=> "color: #{Challenge.find_by(id:6).solved ? 'tomato' : 'initial'}" %>
+    </div>
+
+    <div class= "section"> <h1> <%= Challenge.find_by(id:7).challenge %>  </h1>
+        <p> <%= Challenge.find_by(id:7).body %>  </p>
+        <p class= "textbox"> Submissions:123 </p>
+        <p class= "textbox"> Max Score: 20 </p>
+        <p class= "textbox"> Difficulty: Easy </p>
+        <button class="button"> <%= link_to "View Challenge", challenge_path(7)%> </button>
+        <%= link_to "Like", like_path(id:7), class:'like',  :style=> "color: #{Challenge.find_by(id:7).solved ? 'tomato' : 'initial'}"%>
+      </div>
+
+    <div class= "section2">
+      <h1> <%= Challenge.find_by(id:8).challenge %> </h1><h1 class= "solved"><i class="fa fa-check-circle" style= "color:#7EE5A2"></i>
+      Solved!</h1>
+        <p> <%= Challenge.find_by(id:8).body %>  </p>
+        <p class= "textbox"> Submissions:123 </p>
+        <p class= "textbox"> Max Score: 20 </p>
+        <p class= "textbox"> Difficulty: Easy </p>
+        <button class="button"> <%= link_to "View Challenge", challenge_path(8)%> </button>
+        <%= link_to "Like", like_path(id:8), class: 'like',  :style=> "color: #{Challenge.find_by(id:8).solved ? 'tomato' : 'initial'}" %>
+      </div>
+    </div>
+
+    <div class="subcontainer-rightside">
+
+    <div class= "section3">
+      <h1> Track Categories </h1>
+      <p> <i id= "check" class="fa fa-check-circle" aria-hidden="true"></i>
+        Warmup </p>
+        <i id= "line" class="fa fa-minus fa-rotate-90" aria-hidden="true"></i>
+
+      <p> <i id="bluecircle" class="fa fa-circle-o" aria-hidden="true"></i>
+        Arrays and Sorting</p>
+        <i id= "line" class="fa fa-minus fa-rotate-90" aria-hidden="true"></i>
+
+      <p><i id= "bluecircle" class="fa fa-circle-o" aria-hidden="true"></i>
+        Search</p>
+        <i id= "line" class="fa fa-minus fa-rotate-90" aria-hidden="true"></i>
+
+      <p> <i  id= "check" class="fa fa-check-circle" aria-hidden="true"></i>
+        Dynamic Programming</p>
+        <i id= "line" class="fa fa-minus fa-rotate-90" aria-hidden="true"></i>
+
+      <p> <i id= "check" class="fa fa-check-circle" aria-hidden="true"></i>
+        Strings</p>
+        <i id= "line" class="fa fa-minus fa-rotate-90" aria-hidden="true"></i>
+
+      <p> <i id= "bluecircle" class="fa fa-circle-o" aria-hidden="true"></i>
+        Graph Theory</p>
+        <i id= "line" class="fa fa-minus fa-rotate-90" aria-hidden="true"></i>
+
+      <p> <i id="greycircle" class="fa fa-circle-o" aria-hidden="true"></i>
+        Math</p>
+        <i id= "line" class="fa fa-minus fa-rotate-90" aria-hidden="true"></i>
+
+      <p> <i id= "check" class="fa fa-check-circle" aria-hidden="true"></i>
+        Discrete Mathematics</p>
+        <i id= "line" class="fa fa-minus fa-rotate-90" aria-hidden="true"></i>
+
+      <p> <i id= "check" class="fa fa-check-circle" aria-hidden="true"></i>
+        Bit Manipulation</p>
+        <i id= "line" class="fa fa-minus fa-rotate-90" aria-hidden="true"></i>
+
+      <p> <i id= "greycircle" class="fa fa-circle-o" aria-hidden="true"></i>
+        NP Complete Problems</p>
+        <i id= "line" class="fa fa-minus fa-rotate-90" aria-hidden="true"></i>
+
+        <p> <i id= "greycircle" class="fa fa-circle-o" aria-hidden="true"></i>
+          Game Theory</p>
+    </div>
+  </div>
+
+
+
+  </div>
+
+  </div>
+
+
+
+  </body>
+</html>
