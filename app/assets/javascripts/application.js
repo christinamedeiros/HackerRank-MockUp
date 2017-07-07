@@ -33,7 +33,7 @@ $('.like').click(function(evt){
         self.css("color", "tomato")
       }
       else {
-        self.css("color", "initial")
+        self.css("color", "green")
       }
     })
 })
